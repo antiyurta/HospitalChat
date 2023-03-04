@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 .App {
   text-align: center;
 }
@@ -32,7 +36,57 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+.ant-layout {
+  background: #fafafa !important;
+}
+
+.ant-btn-primary {
+  background-color: #2d8cff;
+}
+
+.chat-login-header * {
+  color: white;
+}
+
+.chat-login-header {
+  height: 550px;
+  margin-top: -48.8px;
+  padding-top: 137.8px;
+  border-radius: 12px;
+  box-shadow: 0 20px 27px rgb(0, 0, 0/ 5%);
+  background-position: 50%;
+  /* background-size: cover; */
+  /* background-size: contain; */
+  /* background-repeat: no-repeat; */
+  /* background-image: url('./assets/image/LoginBackground.svg'); */
+  background: url('./assets/image/demo2.jpg');
+}
+
+.chat-login-header .content {
+  padding-top: 40px;
+  max-width: 480px;
+  margin: auto;
+}
+
+.chat-login-header .content h1 {
+  font-size: 48px;
+  color: white;
+}
+
+.card-login {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 12px;
+  box-shadow: 0 20px 27px rgb(0, 0, 0 / 5%);
+  margin: -190px auto 20px;
+}
+
+.layout-default.ant-layout.layout-sign-up {
+  padding: 11px;
 }
