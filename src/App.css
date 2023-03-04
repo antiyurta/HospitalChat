@@ -90,3 +90,33 @@
 .layout-default.ant-layout.layout-sign-up {
   padding: 11px;
 }
+.ant-tabs-nav-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.ant-tabs-tab {
+  width: 45%;
+  justify-content: center;
+}
+body {
+  overflow: hidden;
+}
+.scrollableContent{
+  overflow-y: scroll;
+  height:calc(100vh - 100px);
+}
+.scrollableContent::-webkit-scrollbar-thumb {
+   background-color: #1890ff;
+}
+.scrollableContent::-webkit-scrollbar {
+  width: 5px;
+  height: 10px;
+  background-color: #f5f5f5;
+}
+
+.scrollableContent::-webkit-scrollbar-track {
+  border: 5px solid white;
+  background-color: #f5f5f5;
+}

@@ -1,21 +1,33 @@
-import { useEffect } from "react";
-import { Get } from "../comman";
+import { useContext, useEffect, useState } from "react";
+import MainContext from "../../context/MainContext";
+import { Avatar, Divider, List, Tabs } from "antd";
+import { SearchOutlined } from "@ant-design/icons";
+import Chat from "./Chat";
+import GroupChat from "./GroupChat";
 
 function Home() {
-    const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY3Mzc2Njg1MCwiZXhwIjoxNjczODUzMjUwfQ.tzMc-SDR3hE1B95zCcOzT8bz4odNDPTH8_nAI1FJ9Ak";
-    const getDatas = async () => {
-        const conf = {
-            headers: {},
-            params: {}
-        };
-        const response = await Get('users/online-users', token, conf);
-        console.log(response);
-    }
-    useEffect(() => {
-        // getDatas();
-    }, [])
-    return (
-        "Hpme"
-    )
+  useEffect(() => {}, []);
+  const items = [
+    {
+      key: "1",
+      label: `Чат`,
+      children: <Chat />,
+    },
+    {
+      key: "2",
+      label: `Грүпп чат`,
+      children: <GroupChat />,
+    },
+  ];
+
+  const onChange = (key) => {
+    console.log(key);
+  };
+
+  return (
+    <>
+      <Tabs defaultActiveKey="1" items={items} onChange={onChange} centered />
+    </>
+  );
 }
 export default Home;
