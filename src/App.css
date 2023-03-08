@@ -120,3 +120,27 @@ body {
   border: 5px solid white;
   background-color: #f5f5f5;
 }
+.chatHeader {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #f0f0f0;
+}
+.chatFooter {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #f0f0f0;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.emojiPicker{
+  position: absolute;
+}
+.popup-content{
+  
+}
