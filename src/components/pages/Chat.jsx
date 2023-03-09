@@ -86,7 +86,7 @@ function Chat() {
           style={{ width: "90%" }}
         />
       </div>
-      <div className="scrollableContent">
+      <div className="scrollableContent scrollBar">
         <InfiniteScroll
           dataLength={searchValue == "" ? data.length : filteredData.length}
           next={() => loadMoreData(Number(page.page) + 1)}

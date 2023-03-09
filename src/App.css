@@ -107,18 +107,25 @@ body {
   overflow-y: scroll;
   height:calc(100vh - 100px);
 }
-.scrollableContent::-webkit-scrollbar-thumb {
+.scrollBar::-webkit-scrollbar-thumb {
    background-color: #1890ff;
 }
-.scrollableContent::-webkit-scrollbar {
+.scrollBar::-webkit-scrollbar {
   width: 5px;
   height: 10px;
   background-color: #f5f5f5;
 }
 
-.scrollableContent::-webkit-scrollbar-track {
+.scrollBar::-webkit-scrollbar-track {
   border: 5px solid white;
   background-color: #f5f5f5;
+}
+.chatDtl-container{
+
+}
+.text-with-dot{
+  display: flex;
+  flex-direction: row;
 }
 .chatHeader {
   display: flex;
@@ -126,6 +133,12 @@ body {
   align-items: center;
   padding: 10px;
   border-bottom: 1px solid #f0f0f0;
+  height: 50px;
+}
+.chatBody{
+  overflow-y: scroll;
+  height: calc(100% - 130px);
+  position: fixed;
 }
 .chatFooter {
   display: flex;
@@ -137,10 +150,92 @@ body {
   position: absolute;
   bottom: 0;
   width: 100%;
+  height: 80px;
+  background: #fff;
 }
 .emojiPicker{
   position: absolute;
 }
 .popup-content{
-  
+  left: 0 !important;
+  bottom: 65px !important;
+  top: unset !important;
+}
+.messages-chat {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.messages-chat .message-in {
+  display:flex;
+  margin-bottom: 10px;
+  width: 100%;
+}
+.messages-chat .message-out {
+  display:flex;
+  margin-bottom: 10px;
+  width: 100%;
+  justify-content: right;
+}
+.text-container-in {
+  background-color: #f6f6f6;
+  padding: 15px;
+  border-radius: 12px;
+  max-width: 70%;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+}
+.text-container-in .text  {
+  float: left;
+  text-align: left;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+.text-container-in .time {
+  font-size: 10px;
+  width: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+}
+.text-container-out {
+  background-color: #1890ff;
+  padding: 15px;
+  border-radius: 12px;
+  max-width: 70%;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+}
+.text-container-out .text {
+  float: left;
+  text-align: left;
+  color: #fff;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+.text-container-out .time {
+  font-size: 10px;
+  width: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: flex-start;
+  color: #fff;
+}
+.chat-textarea {
+  width: 75%;
+  resize: none;
+  max-height: 70px;
+  padding: 5px;
+  outline: 1px solid #000;
+  border-radius: 2px;
+}
+.more-menu {
+  rotate: 90deg;
+  cursor: pointer;
+  margin-left: 5px;
+  width: 20px;
+  height: 20px;
+
 }
