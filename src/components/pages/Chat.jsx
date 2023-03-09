@@ -100,7 +100,10 @@ function Chat() {
               <List.Item
                 key={item.id}
                 className="hover:cursor-pointer hover:bg-red-50"
-                onClick={() => navigate(`/chatDtl`)}
+                onClick={() => {
+                  mainContext.setSelectedUser(item);
+                  navigate(`/chatDtl`);
+                }}
               >
                 <List.Item.Meta
                   avatar={

@@ -7,9 +7,16 @@ const MainContext = React.createContext();
 export const MainStore = (props) => {
   const [cookies, setCookie] = useCookies(["current_token"]);
   const myCookie = cookies.current_token;
+  const [selectedUser, setSelectedUser] = useState(null);
 
   return (
-    <MainContext.Provider value={{ myCookie }}>
+    <MainContext.Provider
+      value={{
+        myCookie,
+        selectedUser,
+        setSelectedUser,
+      }}
+    >
       {props.children}
     </MainContext.Provider>
   );
