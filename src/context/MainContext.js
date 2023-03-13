@@ -5,14 +5,16 @@ import { useCookies } from "react-cookie";
 const MainContext = React.createContext();
 
 export const MainStore = (props) => {
-  const [cookies, setCookie] = useCookies(["current_token"]);
-  const myCookie = cookies.current_token;
+  const [cookies, setCookie] = useCookies();
+  const current_token = cookies.current_token;
+  const current_userId = cookies.curent_userId;
   const [selectedUser, setSelectedUser] = useState(null);
 
   return (
     <MainContext.Provider
       value={{
-        myCookie,
+        current_token,
+        current_userId,
         selectedUser,
         setSelectedUser,
       }}

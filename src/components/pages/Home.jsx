@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import MainContext from "../../context/MainContext";
 import { Avatar, Divider, List, Tabs } from "antd";
 import { SearchOutlined } from "@ant-design/icons";
-import Chat from "./Chat";
+import UserList from "./UserList";
 import GroupChat from "./GroupChat";
 
 function Home() {
@@ -10,12 +10,12 @@ function Home() {
   const items = [
     {
       key: "1",
-      label: `Чат`,
-      children: <Chat />,
+      label: `Ажилтан`,
+      children: <UserList />,
     },
     {
       key: "2",
-      label: `Грүпп чат`,
+      label: `Чат`,
       children: <GroupChat />,
     },
   ];

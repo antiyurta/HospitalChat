@@ -6,7 +6,7 @@ import { Avatar, Divider, List, Input } from "antd";
 import { SearchOutlined } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
 
-function Chat() {
+function UserList() {
   const mainContext = useContext(MainContext);
   let navigate = useNavigate();
 
@@ -27,7 +27,7 @@ function Chat() {
     }
     const conf = {
       headers: {
-        Authorization: `Bearer ${mainContext.myCookie}`,
+        Authorization: `Bearer ${mainContext.current_token}`,
       },
       params: {
         page: page,
@@ -41,7 +41,7 @@ function Chat() {
     await axios
       .get(URL + "users/online-users", conf)
       .then((res) => {
-        console.log(res);
+        // console.log(res);
         setData([...data, ...res.data?.response]);
         // setData(res.data.response)
         setPage(res.data?.page);
@@ -129,4 +129,4 @@ function Chat() {
     </>
   );
 }
-export default Chat;
+export default UserList;

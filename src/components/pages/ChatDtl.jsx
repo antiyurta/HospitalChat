@@ -14,11 +14,13 @@ import MainContext from "../../context/MainContext";
 import EmojiPicker from "emoji-picker-react";
 import Popup from "reactjs-popup";
 import "reactjs-popup/dist/index.css";
+import { io } from "socket.io-client";
 
 function ChatDtl() {
   const mainContext = useContext(MainContext);
   const navigate = useNavigate();
   const [chatText, setChatText] = useState("");
+  const [socket, setSocket] = useState(null);
 
   useEffect(() => {
     console.log("selectedUser", mainContext.selectedUser);
@@ -26,12 +28,26 @@ function ChatDtl() {
       mainContext.setSelectedUser(null);
     };
   }, []);
+
+  useEffect(() => {
+    const newSocket = io("http://192.168.5.111:8989", {
+      transports: ["websocket"],
+    });
+
+    setSocket(newSocket);
+    return () => {
+      newSocket.close();
+    };
+  }, [setSocket]);
+
+  useEffect(() => {
+    console.log("socket", socket);
+  }, [socket]);
+
   const handleKeyDown = (e) => {
     setChatText(e.target.value);
     e.target.style.height = "inherit";
     e.target.style.height = `${e.target.scrollHeight - 20}px`;
-    // In case you have a limitation
-    // e.target.style.height = `${Math.min(e.target.scrollHeight, limit)}px`;
   };
   const items = [
     {
@@ -98,7 +114,7 @@ function ChatDtl() {
         <div className="messages-chat">
           {chatEx.map((el, index) => {
             return (
-              <>
+              <div key={index}>
                 {el.type == 0 ? (
                   <div className="message-in">
                     <Avatar
@@ -165,7 +181,7 @@ function ChatDtl() {
                     </div>
                   </div>
                 )}
-              </>
+              </div>
             );
           })}
         </div>
